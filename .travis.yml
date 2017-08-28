@@ -10,7 +10,7 @@ env:
 before_script:
  - wget https://releases.hashicorp.com/packer/1.0.4/packer_1.0.4_linux_amd64.zip
  - unzip packer_1.0.4_linux_amd64.zip
- - mkdir $HOME/bin
+ - mkdir -p $HOME/bin
  - mv packer $HOME/bin
  - export PATH=$HOME/bin:$PATH
 
