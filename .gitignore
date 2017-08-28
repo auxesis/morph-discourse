@@ -1,2 +1,3 @@
 .env
 do_digitalocean.pem
+ansible/group_vars/all
