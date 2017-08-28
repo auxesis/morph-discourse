@@ -1,10 +1,12 @@
-language: golang
+language: go
 
+# set up environment variables so the build can run
 env:
   global:
     # DO_API_KEY
     - secure: "gVghFrY03qTYV/wTsi1YAo14iIjJpud4WdMi2mSj6YZat5J4gevTUQeSnFEmbGNSHc9jjmVwTIx4lD/W6gunjdtyRk8sSvpCM8FlRVRIaBWCSEdGsbArrU/FKhRUcEP9hG9EsCab3WriutKKdLRur86OQ9mgKChRj/6UK+fFFcML8EbhAcfTXLX3kFFBAL5poAQ5rrhsuzQELYH5clrH62j6qCoDg6jFZyc5+RG/4YVXPVPSNmJVKVKwFd0y/QXTvVtaijL1iSBXmPRna4cMzW08KUvxho3CtXFV3Gh69Px0TwOecirHE8b5vMoiLY+VWBi+Ey8C3oyKK2pmYb4A4egJrd9qcsBmZg2owMJvPN21wUba7XpUDx8dbJis+fA56JlvlzODJ1M004QOQq1oFLyUqZh+W9P2bJ5EKT2ubUNjFsd9OlbyYKpZNve1Zp2NlbvXEZ942MuoviVdzu5waTN5j55/lCAjRZYcjnGXqd+b+d1K5diw+0Jo5b3bI0zV5nC9yfORbS3pBaBcKdMVP0I4+SaTxGqFR8KlvM+j+sE/+h41KIZitArWvfNpXHDz1+l91VXXlX1TcUcCf/Nz+Zlx+QRYth9thHHAxBDSjd7u+kXoLPiKwfkJGkD42tE4NpaGfhXyUgxPFNb88sZ7GgWsVRayETvUfR9/NuxPbgw="
 
+# install packer
 before_script:
  - wget https://releases.hashicorp.com/packer/1.0.4/packer_1.0.4_linux_amd64.zip
  - unzip packer_1.0.4_linux_amd64.zip
