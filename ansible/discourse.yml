@@ -2,7 +2,7 @@
 - hosts: all
   become: root
   pre_tasks:
-    - name: "FIX: Ubuntu 16.04 LTS doesn't come with certain modules, required by ansible"
+    - name: "Install aptitude, required by Ansible, missing in Ubuntu 16.04 LTS"
       raw: apt-get install python-minimal aptitude -y
       become: true
       become_user: root
