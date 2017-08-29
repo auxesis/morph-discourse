@@ -1,3 +1,4 @@
 ---
 - include: discourse.yml
+- include: sslmate.yml
 - include: nginx.yml
