@@ -14,6 +14,22 @@
    dotenv make
    ```
 
+## Making changes to credentials
+
+Whenever you make changes to credentials at `ansible/group_vars/all`, encrypt them with:
+
+```
+make encrypt
+```
+
+Whenever CI runs, it will ensure the credentials are decrypted by running
+
+```
+make decrypt
+```
+
+The `decrypt` target will fail on any environment other than Travis.
+
 ## TODO
 
 - Move discourse from /var/docker to /opt/discourse
