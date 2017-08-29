@@ -20,7 +20,8 @@
       "image": "ubuntu-16-04-x64",
       "region": "sfo1",
       "size": "2gb",
-      "ssh_username": "root"
+      "ssh_username": "root",
+      "snapshot_name": "morph-discourse-{{ timestamp }}"
     }
   ]
 }
