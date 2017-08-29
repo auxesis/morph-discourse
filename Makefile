@@ -19,7 +19,7 @@ ci: decrypt build_and_abort
 encrypt:
 	@tar cvzf secrets.tar.gz ansible/group_vars/all ansible/roles/discourse/files/sslmate.conf ansible/roles/discourse/dhparam.pem ansible/roles/discourse/files/morph.io.key
 	@travis encrypt-file --force secrets.tar.gz secrets.tar.gz.enc
-	@git commit -m "Update secrets" ansible/group_vars/all.enc ansible/roles/discourse/files/sslmate.conf.enc ansible/roles/discourse/dhparam.pem.enc ansible/roles/discourse/files/morph.io.key.enc
+	@git commit -m "Update secrets" secrets.tar.gz.enc
 
 decrypt:
 	@openssl aes-256-cbc -K $(encrypted_0952b8ba8ff0_key) -iv $(encrypted_0952b8ba8ff0_iv) -in secrets.tar.gz.enc -out secrets.tar.gz -d
