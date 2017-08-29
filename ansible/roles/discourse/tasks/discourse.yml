@@ -1,0 +1,19 @@
+---
+- name: Ensure latest git is installed
+  apt: pkg=git state=latest
+- name: Ensure that /var/docker exists
+  file: path=/var/docker owner=deploy group=deploy state=directory
+- name: Get the official discourse docker image
+  command: git clone https://github.com/discourse/discourse_docker.git /var/docker creates=/var/docker/README.md
+- name: Copy over app configuration
+  template: src=app.yml dest=/var/docker/containers/app.yml owner=deploy group=deploy
+
+# launcher bootstrap needs a key pair at /root/.ssh/id_rsa otherwise it waits
+- name: Ensure root .ssh directory exists
+  file: path=/root/.ssh state=directory
+- name: Generate root keypair
+  command: ssh-keygen -f /root/.ssh/id_rsa -t rsa -N '' creates=/root/.ssh/id_rsa
+
+- name: Bootstrap discourse app
+  command: ./launcher bootstrap app chdir=/var/docker creates=/var/docker/shared/standalone/log/rails/production.log
+  notify: start discourse
