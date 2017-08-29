@@ -29,7 +29,3 @@ make decrypt
 ```
 
 The `decrypt` target will fail on any environment other than Travis.
-
-## TODO
-
-- Move discourse from /var/docker to /opt/discourse
