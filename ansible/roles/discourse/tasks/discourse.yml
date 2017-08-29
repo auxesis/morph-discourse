@@ -4,7 +4,10 @@
 - name: Ensure that /var/discourse exists
   file: path=/var/discourse owner=deploy group=deploy state=directory
 - name: Get the official discourse docker image
-  command: git clone https://github.com/discourse/discourse_docker.git /var/discourse creates=/var/discourse/README.md
+  git:
+    repo: https://github.com/discourse/discourse_docker.git
+    dest: /var/discourse
+
 - name: Copy over app configuration
   template: src=app.yml dest=/var/discourse/containers/app.yml owner=deploy group=deploy
 
