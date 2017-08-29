@@ -5,6 +5,9 @@
 do_digitalocean.pem
 
 # encrypted files
+secrets.tar.gz
+
+# secrets and credentials
 ansible/group_vars/all
 ansible/roles/discourse/files/sslmate.conf
 ansible/roles/discourse/dhparam.pem
