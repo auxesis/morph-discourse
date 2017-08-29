@@ -17,7 +17,7 @@ build_and_abort: validate
 ci: decrypt build_and_abort
 
 encrypt:
-	@tar cvzf secrets.tar.gz ansible/group_vars/all ansible/roles/discourse/files/sslmate.conf ansible/roles/discourse/dhparam.pem ansible/roles/discourse/files/morph.io.key
+	@tar cvzf secrets.tar.gz ansible/group_vars/all ansible/roles/discourse/files/sslmate.conf ansible/roles/discourse/files/dhparam.pem ansible/roles/discourse/files/morph.io.key
 	@travis encrypt-file --force secrets.tar.gz secrets.tar.gz.enc
 	@git commit -m "Update secrets" secrets.tar.gz.enc
 

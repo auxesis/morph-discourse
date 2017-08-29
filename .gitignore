@@ -10,5 +10,5 @@ secrets.tar.gz
 # secrets and credentials
 ansible/group_vars/all
 ansible/roles/discourse/files/sslmate.conf
-ansible/roles/discourse/dhparam.pem
+ansible/roles/discourse/files/dhparam.pem
 ansible/roles/discourse/files/morph.io.key
