@@ -14,7 +14,7 @@ debug: validate
 build_and_abort: validate
 	packer build -on-error=abort discourse.json
 
-ci: decrypt validate
+ci: decrypt build_and_abort
 
 encrypt:
 	travis encrypt-file --force ansible/group_vars/all ansible/group_vars/all.enc
