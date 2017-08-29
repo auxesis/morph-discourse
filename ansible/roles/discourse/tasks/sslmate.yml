@@ -49,6 +49,9 @@
     mode: 0644
   when: cron_jobs
 
+- name: Ensure /etc/nginx exists
+  file: path=/etc/nginx owner=root group=root state=directory
+
 - name: Copy across 2048-bit certificate for Diffie Hellman Ephemeral Paramerts
   copy: src=dhparam.pem dest=/etc/nginx/dhparam.pem
 
