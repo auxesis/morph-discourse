@@ -1,6 +1,6 @@
 .PHONY: all plan apply destroy
 
-all: decrypt build
+all: build
 
 validate:
 	packer validate discourse.json
