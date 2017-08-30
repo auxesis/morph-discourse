@@ -7,7 +7,7 @@
 - name: Clone Discourse docker image
   git:
     repo: https://github.com/discourse/discourse_docker.git
-    dest: {{ discourse_root }}
+    dest: "{{ discourse_root }}"
 - name: Ensure Discourse backups directory exists
   file: path={{ discourse_root }}/shared/standalone/backups/default/ owner=deploy group=deploy state=directory
 
